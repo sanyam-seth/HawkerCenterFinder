@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BussinessLibrary\HawkerCenterFinder.BL.csproj" />
+    <ProjectReference Include="..\HawkerCenterFinder.BL\HawkerCenterFinder.BL.csproj" />
     <ProjectReference Include="..\HawkerCenterFinder.Model\HawkerCenterFinder.Model.csproj" />
   </ItemGroup>
 
