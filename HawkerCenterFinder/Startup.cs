@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using HawkerCenterFinder.BL.Helpers;
+using HawkerCenterFinder.Model;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -95,6 +97,15 @@ namespace HawkerCenterFinder
                 endpoints.MapControllers();
             });
 
+            using (var client = new HawkerDbContext())
+            {
+                client.Database.EnsureCreated();
+                if (!client.UserCredentials.Any())
+                {
+                    _ = client.UserCredentials.Add(new UserCredentials(username: configuration["Login:Username"], password: AuthenticationHelper.ComputePasswordHash(configuration["Login:Password"])));
+                }
+                client.SaveChanges();
+            }
         }
     }
 }
