@@ -8,15 +8,12 @@ using System.Threading.Tasks;
 namespace HawkerCenterFinder.Model.DataContract
 {
     [DataContract]
-    public class HawkerSearchRequest
+    public class HawkerCenterResponse
     {
         [DataMember]
-        public double latitude { get; set; }
+        public string Name { get; set; }
 
         [DataMember]
-        public double longitude { get; set; }
-
-        [DataMember]
-        public int numberOfClosest { get; set; }
+        public string ImgUrl { get; set; }
     }
 }

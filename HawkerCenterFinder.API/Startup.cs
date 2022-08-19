@@ -1,4 +1,8 @@
-﻿using HawkerCenterFinder.BL.Helpers;
+﻿using HawkerCenterFinder.BL.Business;
+using HawkerCenterFinder.BL.Helpers;
+using HawkerCenterFinder.BL.Interface;
+using HawkerCenterFinder.DataLayer.Interface;
+using HawkerCenterFinder.DataLayer.Query;
 using HawkerCenterFinder.Model;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -19,6 +23,11 @@ namespace HawkerCenterFinder
         {
 
             services.AddControllers();
+            services.AddScoped<IHawkerCenterRepository, HawkerCenterRepository>();
+            services.AddScoped<IUserCredentialRepository, UserCredentialRepository>();
+            services.AddScoped<IHawkerCenterManager, HawkerCenterManager>();
+            services.AddScoped<ICredentialManager, CredentialManager>();
+
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "Hawker Center Finder Tool APIs", Version = "v1" });

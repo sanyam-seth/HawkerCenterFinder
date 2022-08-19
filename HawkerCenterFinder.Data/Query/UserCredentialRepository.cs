@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HawkerCenterFinder.DataLayer.Query
 {
-    internal class UserCredentialRepository : IUserCredentialRepository
+    public class UserCredentialRepository : IUserCredentialRepository
     {
         /// <summary>
         /// Get Employee Credentials 
@@ -24,8 +24,8 @@ namespace HawkerCenterFinder.DataLayer.Query
             {
                 using (var db = new HawkerDbContext())
                 {
-                    var employeeDbSet = db.Set<UserCredentials>();
-                    var credentials = await employeeDbSet.FindAsync(username);
+                    var userDbSet = db.Set<UserCredentials>();
+                    var credentials = await userDbSet.FindAsync(username);
                     return credentials;
                 }
             }
