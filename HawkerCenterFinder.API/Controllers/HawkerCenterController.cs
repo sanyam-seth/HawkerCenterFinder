@@ -34,7 +34,7 @@ namespace HawkerCenterFinder.Controllers
                 }
 
                 var result = this._hawkerCenterManager.GetNClosestHawkerCenters(searchRequest);
-                return Ok();
+                return Ok(result);
             }
             catch (InvalidOperationException e)
             {
