@@ -12,7 +12,7 @@ Pre-requisites
   Using the Docker (Docker Target OS :Windows)
       
       1. In the command prompt, open the root directory of the solution i.e ./HawkerCenterFinder
-      2. docker build -t HawkerCenterFinder.
+      2. docker build -t HawkerCenterFinder -f Dockerfile .
       3. docker run -p 8080:80 --rm hawkercenterfinder
       4. Run the swagger on http://localhost:8080/swagger
       5. Now follow Run The APIs Section
