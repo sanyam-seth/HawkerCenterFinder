@@ -1,9 +1,11 @@
 using HawkerCenterFinder.BL.Interface;
 using HawkerCenterFinder.Model.DataContract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HawkerCenterFinder.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class HawkerCenterController : Controller

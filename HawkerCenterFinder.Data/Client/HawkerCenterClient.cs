@@ -18,7 +18,7 @@ namespace HawkerCenterFinder.DataLayer.Parser
             {
                 string json = r.ReadToEnd();
                 var items = JsonConvert.DeserializeObject<HawkerData>(json);
-                return items;
+                return items ?? new HawkerData();
             }
         }
     }
