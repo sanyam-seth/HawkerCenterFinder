@@ -1,4 +1,5 @@
 ﻿using HawkerCenterFinder.BL.Interface;
+using HawkerCenterFinder.BL.Parser;
 using HawkerCenterFinder.DataLayer.Interface;
 using HawkerCenterFinder.DataLayer.Parser;
 using HawkerCenterFinder.Model;
@@ -50,13 +51,14 @@ namespace HawkerCenterFinder.BL.Business
             try
             {
                 var fileHawkerData = HawkerCenterClient.GetDataFromFile();
-                var parsedHawkerData = HawkerCenterClient.ParseHawkerDataToHawker(fileHawkerData);
+                var parsedHawkerData = HawkerDataHTMLParser.ParseHawkerDataToHawker(fileHawkerData);
                 
                 var exisitngHawkerData = this._hawkerCenterRepository.GetAllHawkers();
                 var newHawkerData = parsedHawkerData.Where(y => !exisitngHawkerData.Any(z => z.Name == y.Name
                 && z.ImgUrl == y.ImgUrl
                 && z.Latitude == y.Latitude
                 && y.Longitude == y.Longitude)).ToList();
+                
                 await this._hawkerCenterRepository.InsertHawkerCentersAsync(newHawkerData);
                 return true;
             }
