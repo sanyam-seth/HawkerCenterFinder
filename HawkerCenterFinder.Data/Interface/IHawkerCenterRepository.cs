@@ -14,5 +14,10 @@ namespace HawkerCenterFinder.DataLayer.Interface
         /// </summary>
         /// <returns><see cref="List{Hawker}"/></returns>
         public List<Hawker> GetAllHawkers();
+
+        /// <summary>
+        /// Adds the new Hawker Centers in DB
+        /// </summary>
+        Task InsertHawkerCentersAsync(List<Hawker> hawkersList);
     }
 }

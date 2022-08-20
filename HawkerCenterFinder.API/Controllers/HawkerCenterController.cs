@@ -49,7 +49,7 @@ namespace HawkerCenterFinder.Controllers
         }
 
         [HttpGet]
-        [Route("sync")]
+        [Route("refreshdata")]
         public async Task<IActionResult> GetLatestHawkersCenters()
         {
             try

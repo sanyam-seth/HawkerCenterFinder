@@ -39,5 +39,8 @@ namespace HawkerCenterFinder.Model
             Longitude = longitude;
         }
 
+        public Hawker()
+        {
+        }
     }
 }

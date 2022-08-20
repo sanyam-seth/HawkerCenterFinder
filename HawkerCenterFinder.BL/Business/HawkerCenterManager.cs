@@ -47,11 +47,23 @@ namespace HawkerCenterFinder.BL.Business
         /// <returns><see cref="bool"/>Indicating success/failure</returns>
         public async Task<bool> UpdateHawkerCenterData()
         {
-            var fileHawkerData = HawkerCenterParser.GetDataFromFile();
-            var parsedHawkerData = HawkerCenterParser.ParseHawkerDataToHawker(fileHawkerData);
-
-
-            return await Task.FromResult(true);
+            try
+            {
+                var fileHawkerData = HawkerCenterClient.GetDataFromFile();
+                var parsedHawkerData = HawkerCenterClient.ParseHawkerDataToHawker(fileHawkerData);
+                
+                var exisitngHawkerData = this._hawkerCenterRepository.GetAllHawkers();
+                var newHawkerData = parsedHawkerData.Where(y => !exisitngHawkerData.Any(z => z.Name == y.Name
+                && z.ImgUrl == y.ImgUrl
+                && z.Latitude == y.Latitude
+                && y.Longitude == y.Longitude)).ToList();
+                await this._hawkerCenterRepository.InsertHawkerCentersAsync(newHawkerData);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
 

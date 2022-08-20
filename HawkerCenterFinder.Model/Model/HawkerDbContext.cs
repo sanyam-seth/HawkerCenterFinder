@@ -37,8 +37,8 @@ namespace HawkerCenterFinder.Model
             builder.Entity<Hawker>().ToTable("Hawker");
             builder.Entity<Hawker>(entity =>
             {
+                entity.HasKey(e => e.Id);
                 entity.Property(i => i.Id).ValueGeneratedOnAdd();
-                entity.HasKey(i => i.Name);
                 entity.HasIndex(i => i.Latitude).IsUnique();
                 entity.HasIndex(i => i.Longitude).IsUnique();
             });
