@@ -1,5 +1,6 @@
 ﻿using HawkerCenterFinder.BL.Interface;
 using HawkerCenterFinder.DataLayer.Interface;
+using HawkerCenterFinder.DataLayer.Parser;
 using HawkerCenterFinder.Model;
 using HawkerCenterFinder.Model.DataContract;
 
@@ -39,6 +40,20 @@ namespace HawkerCenterFinder.BL.Business
                 throw new Exception(e.Message);
             }
         }
+
+        /// <summary>
+        /// Updates the data in DB from file  
+        /// </summary>
+        /// <returns><see cref="bool"/>Indicating success/failure</returns>
+        public async Task<bool> UpdateHawkerCenterData()
+        {
+            var fileHawkerData = HawkerCenterParser.GetDataFromFile();
+            var parsedHawkerData = HawkerCenterParser.ParseHawkerDataToHawker(fileHawkerData);
+
+
+            return await Task.FromResult(true);
+        }
+
 
 
         private double GetDistance(double longitude, double latitude, double otherLongitude, double otherLatitude)

@@ -50,11 +50,12 @@ namespace HawkerCenterFinder.Controllers
 
         [HttpGet]
         [Route("sync")]
-        public IActionResult GetLatestHawkersCenters()
+        public async Task<IActionResult> GetLatestHawkersCenters()
         {
             try
             {
-                return Accepted();
+                bool accepted = await this._hawkerCenterManager.UpdateHawkerCenterData();
+                return Accepted(accepted);
             }
             catch (InvalidOperationException e)
             {
