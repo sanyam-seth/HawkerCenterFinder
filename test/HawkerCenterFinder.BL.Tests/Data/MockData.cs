@@ -1,4 +1,5 @@
 ﻿using HawkerCenterFinder.Model;
+using HawkerCenterFinder.Model.DataContract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,35 @@ namespace HawkerCenterFinder.BL.Tests.Data
                 ImgUrl = "Https://jkl.com/img.jpeg",
                 Latitude="103.915761950557",
                 Longitude="1.30577514781108",
+                Name ="Mock 5 Hawker Center"
+            },
+        };
+
+        public static List<HawkerCenterResponse> mockHawkerResponseData = new List<HawkerCenterResponse>
+        {
+            new HawkerCenterResponse
+            {
+                ImgUrl = "Https://abc.com/img.jpeg",
+                Name ="Mock 1 Hawker Center"
+            },
+            new HawkerCenterResponse
+            {
+                ImgUrl = "Https://bcd.com/img.jpeg",
+                Name ="Mock 2 Hawker Center"
+            },
+            new HawkerCenterResponse
+            {
+                ImgUrl = "Https://def.com/img.jpeg",
+                Name ="Mock 3 Hawker Center"
+            },
+            new HawkerCenterResponse
+            {
+                ImgUrl = "Https://ghi.com/img.jpeg",
+                Name ="Mock 4 Hawker Center"
+            },
+            new HawkerCenterResponse
+            {
+                ImgUrl = "Https://jkl.com/img.jpeg",
                 Name ="Mock 5 Hawker Center"
             },
         };

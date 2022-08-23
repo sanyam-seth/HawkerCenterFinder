@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\HawkerCenterFinder.API\HawkerCenterFinder.API.csproj" />
     <ProjectReference Include="..\..\src\HawkerCenterFinder.BL\HawkerCenterFinder.BL.csproj" />
+    <ProjectReference Include="..\HawkerCenterFinder.BL.Tests\HawkerCenterFinder.BL.Tests.csproj" />
   </ItemGroup>
 
 </Project>

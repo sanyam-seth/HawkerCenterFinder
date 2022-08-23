@@ -11,9 +11,9 @@ namespace HawkerCenterFinder.Controllers
     public class HawkerCenterController : Controller
     {
         private readonly IHawkerCenterManager _hawkerCenterManager;
-        private readonly ILogger<HawkerCenterController> _logger;
+        private readonly ILogger _logger;
 
-        public HawkerCenterController(ILogger<HawkerCenterController> logger, IHawkerCenterManager hawkerCenterManager)
+        public HawkerCenterController(ILogger logger, IHawkerCenterManager hawkerCenterManager)
         {
             _logger = logger;
             _hawkerCenterManager = hawkerCenterManager;
