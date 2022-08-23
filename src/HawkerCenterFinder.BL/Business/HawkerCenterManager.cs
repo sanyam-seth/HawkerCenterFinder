@@ -26,6 +26,10 @@ namespace HawkerCenterFinder.BL.Business
         {
             if (searchRequest == null)
                 throw new ArgumentNullException(nameof(searchRequest));
+            if (searchRequest.numberOfClosest <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Number of closest cannot be less than equal to zero");
+            }
             try
             {
                 List<Hawker> hawkers = _hawkerCenterRepository.GetAllHawkers();
@@ -53,13 +57,13 @@ namespace HawkerCenterFinder.BL.Business
             {
                 var fileHawkerData = HawkerCenterClient.GetDataFromFile();
                 var parsedHawkerData = HawkerDataHTMLParser.ParseHawkerDataToHawker(fileHawkerData);
-                
+
                 var exisitngHawkerData = this._hawkerCenterRepository.GetAllHawkers();
                 var newHawkerData = parsedHawkerData.Where(y => !exisitngHawkerData.Any(z => z.Name == y.Name
                 && z.ImgUrl == y.ImgUrl
                 && z.Latitude == y.Latitude
                 && y.Longitude == y.Longitude)).ToList();
-                
+
                 await this._hawkerCenterRepository.InsertHawkerCentersAsync(newHawkerData);
                 return true;
             }

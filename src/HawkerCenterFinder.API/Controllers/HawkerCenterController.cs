@@ -32,7 +32,7 @@ namespace HawkerCenterFinder.Controllers
                 || searchRequest.numberOfClosest <= 0)
                 {
                     this._logger.LogError($"Returning BadRequest due to validation Errors");
-                    return BadRequest("The search request cannot be null");
+                    return BadRequest("The search request cannot be null or number of closest cannot be less than equal to zero");
                 }
 
                 var result = this._hawkerCenterManager.GetNClosestHawkerCenters(searchRequest);
