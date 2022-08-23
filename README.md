@@ -7,7 +7,7 @@
     1. Open Visual Studio
     2. Set HawkerCenterFinder.Api as the startup project
     3. Run the solution by clicking IIS Express button
-    4. Run the swagger on https://localhost:44374/swagger
+    4. Run the swagger on https://localhost:44379/swagger
     5. Now follow Run The APIs Section
 
 	API Endpoints For IIS
