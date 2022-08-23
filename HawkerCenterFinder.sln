@@ -3,13 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HawkerCenterFinder.API", "src\HawkerCenterFinder.API\HawkerCenterFinder.API.csproj", "{067F30B2-D45A-4C66-9155-7CC141AD443C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HawkerCenterFinder.API", "src\HawkerCenterFinder.API\HawkerCenterFinder.API.csproj", "{067F30B2-D45A-4C66-9155-7CC141AD443C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HawkerCenterFinder.DataLayer", "src\HawkerCenterFinder.Data\HawkerCenterFinder.DataLayer.csproj", "{F7034093-A652-424F-BD85-670E5C7A22F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HawkerCenterFinder.DataLayer", "src\HawkerCenterFinder.Data\HawkerCenterFinder.DataLayer.csproj", "{F7034093-A652-424F-BD85-670E5C7A22F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HawkerCenterFinder.BL", "src\HawkerCenterFinder.BL\HawkerCenterFinder.BL.csproj", "{1DEBC862-9DFE-4507-B636-E6218DE96B36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HawkerCenterFinder.BL", "src\HawkerCenterFinder.BL\HawkerCenterFinder.BL.csproj", "{1DEBC862-9DFE-4507-B636-E6218DE96B36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HawkerCenterFinder.Model", "src\HawkerCenterFinder.Model\HawkerCenterFinder.Model.csproj", "{4B04BBFD-5603-46F5-9F9F-C449048D8197}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HawkerCenterFinder.Model", "src\HawkerCenterFinder.Model\HawkerCenterFinder.Model.csproj", "{4B04BBFD-5603-46F5-9F9F-C449048D8197}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{399DCF0D-3F92-4575-9EDE-B0A8BA8F63F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8EFFA605-34BA-4960-8247-1EF416CB2C37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HawkerCenterFinder.API.Tests", "test\HawkerCenterFinder.API.Tests\HawkerCenterFinder.API.Tests.csproj", "{AFBCBDAC-833E-4EE9-96C9-662DB7182465}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HawkerCenterFinder.BL.Tests", "test\HawkerCenterFinder.BL.Tests\HawkerCenterFinder.BL.Tests.csproj", "{174E6B86-6304-433E-98D2-398DFB492ADF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +41,25 @@ Global
 		{4B04BBFD-5603-46F5-9F9F-C449048D8197}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B04BBFD-5603-46F5-9F9F-C449048D8197}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B04BBFD-5603-46F5-9F9F-C449048D8197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFBCBDAC-833E-4EE9-96C9-662DB7182465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFBCBDAC-833E-4EE9-96C9-662DB7182465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFBCBDAC-833E-4EE9-96C9-662DB7182465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFBCBDAC-833E-4EE9-96C9-662DB7182465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{174E6B86-6304-433E-98D2-398DFB492ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174E6B86-6304-433E-98D2-398DFB492ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174E6B86-6304-433E-98D2-398DFB492ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174E6B86-6304-433E-98D2-398DFB492ADF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{067F30B2-D45A-4C66-9155-7CC141AD443C} = {399DCF0D-3F92-4575-9EDE-B0A8BA8F63F8}
+		{F7034093-A652-424F-BD85-670E5C7A22F3} = {399DCF0D-3F92-4575-9EDE-B0A8BA8F63F8}
+		{1DEBC862-9DFE-4507-B636-E6218DE96B36} = {399DCF0D-3F92-4575-9EDE-B0A8BA8F63F8}
+		{4B04BBFD-5603-46F5-9F9F-C449048D8197} = {399DCF0D-3F92-4575-9EDE-B0A8BA8F63F8}
+		{AFBCBDAC-833E-4EE9-96C9-662DB7182465} = {8EFFA605-34BA-4960-8247-1EF416CB2C37}
+		{174E6B86-6304-433E-98D2-398DFB492ADF} = {8EFFA605-34BA-4960-8247-1EF416CB2C37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3AADCC6-3311-42FC-96D7-3D4808367041}

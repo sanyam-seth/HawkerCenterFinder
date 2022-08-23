@@ -30,7 +30,7 @@ namespace HawkerCenterFinder.BL.Business
                 throw new ArgumentNullException("Username or Password cannot be empty");
             }
 
-            UserCredentials credentials = await _userCredentialRepository.GetEmployeeCredentialsAsync(username);
+            UserCredentials credentials = await _userCredentialRepository.GetUserCredentialsAsync(username);
 
             if (credentials == null)
                 return false;

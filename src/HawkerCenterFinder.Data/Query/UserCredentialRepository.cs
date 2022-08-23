@@ -12,11 +12,11 @@ namespace HawkerCenterFinder.DataLayer.Query
     public class UserCredentialRepository : IUserCredentialRepository
     {
         /// <summary>
-        /// Get Employee Credentials 
+        /// Get User Credentials 
         /// </summary>
-        /// <param name="username"> username of the employee</param>
+        /// <param name="username"> username</param>
         /// <returns><see cref="UserCredentials"/></returns>
-        public async Task<UserCredentials?> GetEmployeeCredentialsAsync(string username)
+        public async Task<UserCredentials?> GetUserCredentialsAsync(string username)
         {
             if (string.IsNullOrEmpty(username))
                 throw new ArgumentNullException("Username cannot be empty");
