@@ -29,7 +29,7 @@ namespace HawkerCenterFinder.BL.Helpers
         /// <summary>
         /// Generate JSON Web Token
         /// </summary>
-        /// <param name="username">username of the employee</param>
+        /// <param name="username">username of the user</param>
         /// <param name="_configuration"><see cref="IConfiguration"/> object</param>
         /// <returns><see cref="JwtSecurityToken"/> Token</returns>
         public static JwtSecurityToken GenerateJSONWebToken(string username, IConfiguration _configuration)

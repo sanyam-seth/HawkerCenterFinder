@@ -15,14 +15,14 @@ namespace HawkerCenterFinder.API.Controllers
 
         private readonly IConfiguration _configuration;
 
-        public AuthenticationController(ICredentialManager employeeHierarchyManager, IConfiguration configuration)
+        public AuthenticationController(ICredentialManager userHierarchyManager, IConfiguration configuration)
         {
-            _credentialManager = employeeHierarchyManager;
+            _credentialManager = userHierarchyManager;
             _configuration = configuration;
         }
 
         /// <summary>
-        /// Login API For Employees
+        /// Login API For users
         /// </summary>
         /// <param name="model"/> User Login Model</param>
         /// <returns><see cref="IActionResult"/> Authenticated Result</returns>

@@ -20,8 +20,8 @@ namespace HawkerCenterFinder.BL.Business
         /// <summary>
         /// Validating the input user credentials 
         /// </summary>
-        /// <param name="username">Username of the employee</param>
-        /// <param name="password">Password of the employee</param>
+        /// <param name="username">Username of the user</param>
+        /// <param name="password">Password of the user</param>
         /// <returns><see cref="bool"/>Value stating the validation of the credentials</returns>
         public async Task<bool> ValidateUserCredentials(string username, string password)
         {
